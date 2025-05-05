@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Illuminate\Support\Facades\Hash;
 use App\Http\Requests\ProfileUpdateRequest;
 
 class ProfileController extends Controller
@@ -24,7 +24,7 @@ class ProfileController extends Controller
         }
 
         $user->save();
-        
+
         return redirect()->route('profile.show')->with('success', 'Profile updated.');
     }
 }
